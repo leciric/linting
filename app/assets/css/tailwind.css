@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100;
+    @apply transition-colors duration-300;
+    @apply font-sans antialiased;
+    /* Prevent horizontal overflow on mobile */
+    @apply overflow-x-hidden;
+  }
+
+  /* Better touch targets on mobile */
+  a, button {
+    @apply touch-manipulation;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+/* Better mobile scrolling */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS safe area padding */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
