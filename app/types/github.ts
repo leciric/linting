@@ -50,6 +50,7 @@ export interface GitHubEvent {
     action?: string
     ref?: string
     ref_type?: string
+    size?: number  // Number of commits in PushEvent
     commits?: Array<{
       sha: string
       message: string

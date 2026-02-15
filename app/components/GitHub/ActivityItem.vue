@@ -25,7 +25,8 @@ const getEventIcon = (type: string) => {
 const getEventDescription = (event: GitHubEvent) => {
   switch (event.type) {
     case 'PushEvent':
-      const commitCount = event.payload.commits?.length || 0
+      // Use payload.size (actual commit count) or fall back to commits array length
+      const commitCount = event.payload.size ?? event.payload.commits?.length ?? 0
       return `Pushed ${commitCount} commit${commitCount !== 1 ? 's' : ''}`
     case 'CreateEvent':
       return `Created ${event.payload.ref_type} ${event.payload.ref || ''}`

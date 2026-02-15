@@ -22,7 +22,7 @@ const tabs = [
     />
 
     <!-- Tabs -->
-    <div class="flex gap-1 mb-6 sm:mb-8 border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+    <div class="flex gap-1 mb-6 sm:mb-8 border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto sm:overflow-x-visible scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
       <button
         v-for="tab in tabs"
         :key="tab.id"

@@ -61,7 +61,7 @@ export default defineNuxtConfig({
         { name: 'twitter:description', content: 'Full-stack Developer specializing in React, TypeScript, Node.js, and mobile applications.' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'canonical', href: 'https://linting.dev' },
       ],
       script: [
