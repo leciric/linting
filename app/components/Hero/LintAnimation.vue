@@ -22,15 +22,11 @@ const CODE_SYMBOLS = ['{', '}', '(', ')', '=>', '//', ';', 'const', 'let', 'lint
 // Colors - Light mode needs stronger colors since background is white
 const isDark = computed(() => colorMode.value === 'dark')
 const colors = computed(() => ({
-  base: isDark.value ? 'rgba(161, 161, 170, 0.5)' : 'rgba(100, 116, 139, 0.6)',
-  error: isDark.value ? 'rgba(239, 68, 68, 0.8)' : 'rgba(220, 38, 38, 0.85)',
-  fixed: isDark.value ? 'rgba(129, 140, 248, 0.7)' : 'rgba(79, 70, 229, 0.75)',
+  error: isDark.value ? 'rgba(239, 68, 68, 0.9)' : 'rgba(220, 38, 38, 0.9)',
+  fixed: isDark.value ? 'rgba(129, 140, 248, 0.8)' : 'rgba(79, 70, 229, 0.8)',
   beam: isDark.value ? 'rgba(129, 140, 248, 0.08)' : 'rgba(99, 102, 241, 0.06)',
   beamGlow: isDark.value ? 'rgba(129, 140, 248, 0.02)' : 'rgba(99, 102, 241, 0.015)',
 }))
-
-// Opacity multiplier - light mode needs higher base opacity
-const opacityMultiplier = computed(() => isDark.value ? 1 : 1.4)
 
 interface Particle {
   x: number
@@ -42,7 +38,7 @@ interface Particle {
   speedY: number
   speedX: number
   opacity: number
-  state: 'normal' | 'error' | 'fixed'
+  state: 'error' | 'fixed'
   stateTimer: number
   rotation: number
   rotationSpeed: number
@@ -60,8 +56,8 @@ function createParticle(canvasWidth: number, canvasHeight: number, startAtBottom
     size: 10 + Math.random() * 8,
     speedY: -(0.2 + Math.random() * 0.4), // Float upward
     speedX: (Math.random() - 0.5) * 0.3, // Slight horizontal drift
-    opacity: 0.15 + Math.random() * 0.35, // Increased base opacity
-    state: 'normal',
+    opacity: 0.4 + Math.random() * 0.4, // Higher opacity since particles are only visible when linted
+    state: 'error', // Start as errors (red) waiting to be linted
     stateTimer: 0,
     rotation: Math.random() * Math.PI * 0.1 - Math.PI * 0.05,
     rotationSpeed: (Math.random() - 0.5) * 0.002,
@@ -107,30 +103,24 @@ function drawParticle(p: Particle) {
   if (!ctx) return
   
   // Determine color based on state
-  let color = colors.value.base
-  if (p.state === 'error') {
-    color = colors.value.error
-  } else if (p.state === 'fixed') {
-    color = colors.value.fixed
-  }
+  const color = p.state === 'error' ? colors.value.error : colors.value.fixed
   
   ctx.save()
   ctx.translate(p.x, p.y)
   ctx.rotate(p.rotation)
   ctx.font = `${p.size}px "JetBrains Mono", "Fira Code", monospace`
   ctx.fillStyle = color
-  // Apply opacity with multiplier for light mode visibility
-  ctx.globalAlpha = Math.min(p.opacity * opacityMultiplier.value, 1)
+  ctx.globalAlpha = p.opacity
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
   
-  // Add glow for error and fixed particles
+  // Add glow for particles
   if (p.state === 'error') {
-    ctx.shadowColor = isDark.value ? 'rgba(239, 68, 68, 0.8)' : 'rgba(220, 38, 38, 0.6)'
-    ctx.shadowBlur = 10
-  } else if (p.state === 'fixed') {
-    ctx.shadowColor = isDark.value ? 'rgba(129, 140, 248, 0.8)' : 'rgba(79, 70, 229, 0.5)'
+    ctx.shadowColor = isDark.value ? 'rgba(239, 68, 68, 0.9)' : 'rgba(220, 38, 38, 0.7)'
     ctx.shadowBlur = 12
+  } else {
+    ctx.shadowColor = isDark.value ? 'rgba(129, 140, 248, 0.9)' : 'rgba(79, 70, 229, 0.6)'
+    ctx.shadowBlur = 14
   }
   
   ctx.fillText(p.symbol, 0, 0)
@@ -179,32 +169,23 @@ function updateParticle(p: Particle, canvasWidth: number, canvasHeight: number) 
     p.y += (p.baseY - p.y) * 0.1
   }
   
-  // Lint beam interaction - trigger exactly when beam passes through particle
-  // Use baseY for consistent detection, check if beam crossed particle this frame
+  // Lint beam interaction - when beam passes, it FIXES the error (red -> purple)
   const beamPassedThrough = lintBeamActive && 
     p.baseY >= lintBeamY - LINT_BEAM_SPEED && 
     p.baseY <= lintBeamY + LINT_BEAM_SPEED &&
-    p.state === 'normal'
+    p.state === 'error'
   
   if (beamPassedThrough) {
-    // Random chance to get "linted"
-    if (Math.random() < 0.4) {
-      p.state = 'error'
-      p.stateTimer = 0
-    }
+    // Beam fixes the error
+    p.state = 'fixed'
+    p.stateTimer = 0
   }
   
   // State transitions
-  if (p.state === 'error') {
+  if (p.state === 'fixed') {
     p.stateTimer++
-    if (p.stateTimer > 30) { // ~0.5 seconds at 60fps
-      p.state = 'fixed'
-      p.stateTimer = 0
-    }
-  } else if (p.state === 'fixed') {
-    p.stateTimer++
-    if (p.stateTimer > 180) { // ~3 seconds
-      p.state = 'normal'
+    if (p.stateTimer > 180) { // ~3 seconds in purple/fixed state, then back to error
+      p.state = 'error'
       p.stateTimer = 0
     }
   }
