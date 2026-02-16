@@ -2,8 +2,10 @@
 </script>
 
 <template>
-  <section class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] flex items-center">
-    <div class="w-full max-w-5xl mx-auto">
+  <section class="relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+    <!-- Linting Animation Background -->
+    <HeroLintAnimation class="absolute inset-0 z-0" />
+    <div class="relative z-10 w-full max-w-5xl mx-auto">
       <div class="max-w-3xl">
         <!-- Greeting -->
         <p 
