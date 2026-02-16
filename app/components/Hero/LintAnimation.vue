@@ -11,7 +11,7 @@ let particles: Particle[] = []
 let mouseX = -1000
 let mouseY = -1000
 let lintBeamY = -100
-let lintBeamActive = false
+let lintBeamActive = true // Start active immediately
 let lastLintTime = 0
 const LINT_INTERVAL = 6000 // Lint every 6 seconds
 const LINT_BEAM_SPEED = 3
@@ -210,8 +210,8 @@ function animate(timestamp: number) {
   // Clear canvas
   ctx.clearRect(0, 0, width, height)
   
-  // Update lint beam
-  if (timestamp - lastLintTime > LINT_INTERVAL) {
+  // Update lint beam - start immediately, then repeat every LINT_INTERVAL
+  if (!lintBeamActive && timestamp - lastLintTime > LINT_INTERVAL) {
     lintBeamActive = true
     lintBeamY = -40
     lastLintTime = timestamp
