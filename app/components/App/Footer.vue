@@ -20,7 +20,6 @@ const socialLinks = [
         <!-- Copyright -->
         <div class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 text-center sm:text-left space-y-1">
           <p>&copy; {{ currentYear }} {{ company.name }}. {{ t('footer.rights') }}</p>
-          <p>{{ t('footer.cnpj') }} {{ company.cnpj }}</p>
         </div>
 
         <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">

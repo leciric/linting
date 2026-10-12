@@ -21,12 +21,18 @@
   },
   "hero": {
     "eyebrow": "Custom software, made in Brazil",
-    "title": "From first commit to production, without the noise.",
+    "title": "From first commit to production,",
     "description": "Linting builds web and mobile apps, websites, MVPs and AI agents connected to the tools your business already uses.",
     "note": "You talk directly to the person writing the code.",
     "ctaPrimary": "Request a quote",
     "ctaSecondary": "See services",
-    "origin": "The name comes from \"lint\", the founder's nickname from before writing any code."
+    "origin": "The name comes from \"lint\", the founder's nickname from before writing any code.",
+    "titleAccent": "without the noise.",
+    "editor": {
+      "problems": "no problems | 1 problem | {count} problems",
+      "ready": "ready for production",
+      "panel": "Problems"
+    }
   },
   "services": {
     "title": "What Linting does",
@@ -67,7 +73,8 @@
         "Priority on what validates the idea",
         "A codebase ready to grow after launch"
       ]
-    }
+    },
+    "eyebrow": "01 · Services"
   },
   "process": {
     "title": "How it works",
@@ -88,7 +95,8 @@
         "title": "Launch",
         "description": "Going live, final polish and support once the project is out."
       }
-    ]
+    ],
+    "eyebrow": "02 · Process"
   },
   "products": {
     "title": "Products by Linting",
@@ -114,7 +122,8 @@
         "Private, public, permanent or expiring links"
       ],
       "snippetCaption": "Add Hatch to Claude Code"
-    }
+    },
+    "eyebrow": "03 · Products"
   },
   "founder": {
     "title": "Who's behind it",
@@ -122,7 +131,8 @@
     "role": "Founder and full-stack developer",
     "bio": "Full-stack developer since 2021, with time at Stefanini, 7waves and Consorciocred. Works with React, Vue, React Native, Node.js and .NET, and built AgentBox and Hatch to put AI agents to real work.",
     "cta": "See the full résumé",
-    "photoAlt": "Photo of Leandro Ciric"
+    "photoAlt": "Photo of Leandro Ciric",
+    "eyebrow": "04 · Founder"
   },
   "contact": {
     "title": "Ready to get your project off the ground?",
@@ -131,7 +141,8 @@
     "email": "Send an email",
     "whatsappMessage": "Hi! I found Linting's website and would like to talk about a project.",
     "emailSubject": "Project with Linting",
-    "elsewhere": "Or find us on"
+    "elsewhere": "Or find us on",
+    "eyebrow": "Contact"
   },
   "about": {
     "title": "About the founder",
@@ -173,7 +184,15 @@
     "starredEmpty": "No starred repositories yet"
   },
   "footer": {
-    "rights": "All rights reserved.",
-    "cnpj": "CNPJ"
+    "rights": "All rights reserved."
+  },
+  "stats": {
+    "years": "years building software",
+    "yearsValue": "5+",
+    "areas": "web, mobile and AI, front end to database",
+    "areasValue": "3 fronts",
+    "products": "products of our own, live",
+    "productsValue": "2",
+    "stack": "Everyday stack"
   }
 }

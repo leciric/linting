@@ -21,12 +21,18 @@
   },
   "hero": {
     "eyebrow": "Software sob medida, feito no Brasil",
-    "title": "Do primeiro commit à produção, sem ruído no caminho.",
+    "title": "Do primeiro commit à produção,",
     "description": "A Linting desenvolve aplicativos web e mobile, sites, MVPs e agentes de IA conectados às ferramentas que o seu negócio já usa.",
     "note": "Você fala direto com quem escreve o código.",
     "ctaPrimary": "Solicitar orçamento",
     "ctaSecondary": "Ver serviços",
-    "origin": "O nome vem de \"lint\", apelido do fundador antes mesmo de programar."
+    "origin": "O nome vem de \"lint\", apelido do fundador antes mesmo de programar.",
+    "titleAccent": "sem ruído.",
+    "editor": {
+      "problems": "nenhum problema | 1 problema | {count} problemas",
+      "ready": "pronto para produção",
+      "panel": "Problemas"
+    }
   },
   "services": {
     "title": "O que a Linting faz",
@@ -67,7 +73,8 @@
         "Prioridade no que valida a ideia",
         "Base pronta para crescer depois do lançamento"
       ]
-    }
+    },
+    "eyebrow": "01 · Serviços"
   },
   "process": {
     "title": "Como funciona",
@@ -88,7 +95,8 @@
         "title": "Lançamento",
         "description": "Publicação, ajustes finos e suporte depois que o projeto está no ar."
       }
-    ]
+    ],
+    "eyebrow": "02 · Processo"
   },
   "products": {
     "title": "Produtos da Linting",
@@ -114,7 +122,8 @@
         "Links privados, públicos, permanentes ou temporários"
       ],
       "snippetCaption": "Adicione o Hatch ao Claude Code"
-    }
+    },
+    "eyebrow": "03 · Produtos"
   },
   "founder": {
     "title": "Quem está por trás",
@@ -122,7 +131,8 @@
     "role": "Fundador e desenvolvedor full-stack",
     "bio": "Desenvolvedor full-stack desde 2021, com passagem por Stefanini, 7waves e Consorciocred. Trabalha com React, Vue, React Native, Node.js e .NET, e criou o AgentBox e o Hatch para levar agentes de IA ao trabalho de verdade.",
     "cta": "Ver currículo completo",
-    "photoAlt": "Foto de Leandro Ciric"
+    "photoAlt": "Foto de Leandro Ciric",
+    "eyebrow": "04 · Fundador"
   },
   "contact": {
     "title": "Vamos tirar seu projeto do papel?",
@@ -131,7 +141,8 @@
     "email": "Enviar e-mail",
     "whatsappMessage": "Olá! Vim pelo site da Linting e gostaria de conversar sobre um projeto.",
     "emailSubject": "Projeto com a Linting",
-    "elsewhere": "Ou encontre a gente em"
+    "elsewhere": "Ou encontre a gente em",
+    "eyebrow": "Contato"
   },
   "about": {
     "title": "Sobre o fundador",
@@ -173,7 +184,15 @@
     "starredEmpty": "Nenhum repositório favorito ainda"
   },
   "footer": {
-    "rights": "Todos os direitos reservados.",
-    "cnpj": "CNPJ"
+    "rights": "Todos os direitos reservados."
+  },
+  "stats": {
+    "years": "anos desenvolvendo software",
+    "yearsValue": "5+",
+    "areas": "web, mobile e IA, do front ao banco",
+    "areasValue": "3 frentes",
+    "products": "produtos próprios no ar",
+    "productsValue": "2",
+    "stack": "Stack do dia a dia"
   }
 }

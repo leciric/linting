@@ -38,7 +38,7 @@ const { t } = useI18n()
           {{ t('contact.email') }}
         </a>
       </div>
-      <p class="mt-4 text-sm text-primary-100">{{ company.email }}</p>
+      <p class="mt-4 text-sm text-primary-100">{{ company.whatsappDisplay }} · {{ company.email }}</p>
 
       <div class="mt-8 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
         <span class="text-primary-100">{{ t('contact.elsewhere') }}</span>

@@ -3,10 +3,9 @@ export const company = {
   name: 'Linting',
   // PLACEHOLDER: confirm the address clients should write to
   email: 'leandro@linting.dev',
-  // PLACEHOLDER: WhatsApp number in international format, digits only (55 + DDD + number)
-  whatsapp: '5500000000000',
-  // PLACEHOLDER: company registration number
-  cnpj: '00.000.000/0000-00',
+  // WhatsApp in international format, digits only, for wa.me links
+  whatsapp: '5511973040532',
+  whatsappDisplay: '+55 11 97304-0532',
 }
 
 export const whatsappUrl = (message: string) =>
