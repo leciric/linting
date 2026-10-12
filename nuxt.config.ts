@@ -24,7 +24,9 @@ export default defineNuxtConfig({
   // Google Fonts
   googleFonts: {
     families: {
-      Inter: [400, 500, 600, 700],
+      'Geist': [400, 500, 600, 700],
+      'Geist Mono': [400, 500],
+      'Instrument Serif': { ital: [400] },
     },
     display: 'swap',
   },
@@ -54,7 +56,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'author', content: 'Leandro Ciric' },
         { name: 'robots', content: 'index, follow' },
-        { name: 'theme-color', content: '#4f46e5' },
+        { name: 'theme-color', content: '#0a0a0b' },
         { property: 'og:site_name', content: 'Linting' },
       ],
       link: [
@@ -73,7 +75,6 @@ export default defineNuxtConfig({
               '@type': 'Person',
               name: 'Leandro Ciric',
               alternateName: 'lint',
-              url: 'https://linting.dev/about',
               jobTitle: 'Full-stack Developer',
               sameAs: [
                 'https://github.com/leciric',

@@ -18,9 +18,9 @@ The website of Linting, Leandro Ciric's software company, built with Nuxt 4, Vue
 
 ## About
 
-**Linting** is Leandro Ciric's software-services company. The name comes from the nickname "lint". This site presents Linting's services (web and mobile apps, AI agents and MCP integrations, websites, MVPs), its products ([AgentBox](https://github.com/leciric/agentbox) and [Hatch](https://github.com/leciric/hatch)), and the founder's résumé at `/about`.
+**Linting** is Leandro Ciric's software-services company. The name comes from the nickname "lint". This site presents Linting's services (web and mobile apps, AI agents and MCP integrations, websites, MVPs), its products ([AgentBox](https://github.com/leciric/agentbox) and [Hatch](https://github.com/leciric/hatch)), and a short section about the founder.
 
-The site is in Brazilian Portuguese at `/` and English at `/en`, with [@nuxtjs/i18n](https://i18n.nuxtjs.org). Texts live in `i18n/locales/pt-BR.json` and `i18n/locales/en.json`; contact details, the CNPJ and product links in `app/data/company.ts`.
+The site is in Brazilian Portuguese at `/` and English at `/en`, with [@nuxtjs/i18n](https://i18n.nuxtjs.org). Texts live in `i18n/locales/pt-BR.json` and `i18n/locales/en.json`; contact details, social links and product links in `app/data/company.ts`.
 
 ### Built With
 
@@ -47,20 +47,22 @@ The site is in Brazilian Portuguese at `/` and English at `/en`, with [@nuxtjs/i
 linting/
 ├── app/
 │   ├── components/       # Vue components organized by feature
-│   │   ├── App/          # Header, Footer
+│   │   ├── App/          # Header, Footer, Logo
 │   │   ├── Contact/      # Contact section
-│   │   ├── Experience/   # Work experience timeline
+│   │   ├── Founder/      # About the founder
 │   │   ├── GitHub/       # GitHub activity & starred repos
-│   │   ├── Hero/         # Hero section
-│   │   ├── Projects/     # Projects showcase
-│   │   ├── Skills/       # Skills section
+│   │   ├── Hero/         # Hero section and its lint editor
+│   │   ├── Process/      # How it works
+│   │   ├── Products/     # AgentBox and Hatch
+│   │   ├── Services/     # Services
 │   │   └── UI/           # Reusable UI components
-│   ├── data/             # Portfolio data (jobs, projects, skills)
+│   ├── data/             # Company data (contact, products)
 │   ├── layouts/          # Page layouts
 │   └── pages/            # Route pages
 ├── server/
 │   └── api/              # Server API routes
 │       └── github/       # GitHub API endpoints
+├── i18n/locales/         # pt-BR and en texts
 ├── nuxt.config.ts        # Nuxt configuration
 └── tailwind.config.ts    # Tailwind CSS configuration
 ```
@@ -133,14 +135,9 @@ colors: {
 }
 ```
 
-### Portfolio Data
+### Company Data
 
-Update your information in `app/data/portfolio.ts`:
-
-- **jobs** - Work experience entries
-- **projects** - Featured projects
-- **skills** - Technical skills (languages, frameworks, tools)
-- **contactLinks** - Social and contact links
+Contact details, social links and products are in `app/data/company.ts`.
 
 ### SEO Settings
 

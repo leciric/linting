@@ -5,52 +5,46 @@ const localePath = useLocalePath()
 const navLinks = computed(() => [
   { name: t('nav.services'), to: { path: localePath('/'), hash: '#services' } },
   { name: t('nav.products'), to: { path: localePath('/'), hash: '#products' } },
-  { name: t('nav.about'), to: localePath('/about') },
+  { name: t('nav.about'), to: { path: localePath('/'), hash: '#founder' } },
 ])
 </script>
 
 <template>
-  <header
-    class="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800"
-    role="banner"
-  >
+  <header class="sticky top-0 z-50 px-3 sm:px-4 pt-3" role="banner">
     <nav
-      class="max-w-5xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between gap-2"
+      class="max-w-6xl mx-auto h-14 pl-4 pr-2 flex items-center justify-between gap-2 rounded-2xl border border-zinc-900/10 dark:border-white/10 bg-paper/75 dark:bg-ink/70 backdrop-blur-xl shadow-[0_8px_30px_rgb(0_0_0/0.06)] dark:shadow-[0_8px_30px_rgb(0_0_0/0.4)]"
       role="navigation"
       :aria-label="t('nav.mainNav')"
     >
       <!-- Logo -->
-      <NuxtLink
-        :to="localePath('/')"
-        class="text-lg sm:text-xl font-bold text-primary-600 dark:text-primary-400 hover:opacity-80 transition-opacity"
-        :aria-label="t('nav.home')"
-      >
-        linting
+      <NuxtLink :to="localePath('/')" class="hover:opacity-80 transition-opacity" :aria-label="t('nav.home')">
+        <AppLogo />
       </NuxtLink>
 
       <!-- Navigation -->
-      <div class="flex items-center gap-1.5 sm:gap-4">
+      <div class="flex items-center gap-1.5 sm:gap-2">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.name"
           :to="link.to"
-          class="hidden md:inline-block text-sm font-medium transition-colors px-2 py-1 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-          exact-active-class="!text-primary-600 dark:!text-primary-400"
+          class="hidden md:inline-block text-sm font-medium transition-colors px-3 py-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-900/5 dark:hover:bg-white/5"
+          exact-active-class="!text-zinc-900 dark:!text-zinc-100"
         >
           {{ link.name }}
-        </NuxtLink>
-
-        <NuxtLink
-          :to="{ path: localePath('/'), hash: '#contact' }"
-          class="hidden xs:inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors"
-        >
-          {{ t('nav.contact') }}
         </NuxtLink>
 
         <UILanguageSwitch />
 
         <!-- Theme Toggle -->
         <UIThemeToggle />
+
+        <NuxtLink
+          :to="{ path: localePath('/'), hash: '#contact' }"
+          class="hidden xs:inline-flex items-center gap-1.5 h-10 px-4 text-sm font-semibold rounded-xl bg-primary-400 hover:bg-primary-300 text-ink transition-colors"
+        >
+          {{ t('nav.contact') }}
+          <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
+        </NuxtLink>
       </div>
     </nav>
   </header>

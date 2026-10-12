@@ -2,15 +2,13 @@
   "meta": {
     "title": "Linting {'|'} Desenvolvimento de software, apps e agentes de IA",
     "description": "A Linting cria aplicativos web e mobile, sites, MVPs e agentes de IA integrados às ferramentas do seu negócio. Você fala direto com quem desenvolve.",
-    "aboutTitle": "Sobre o fundador {'|'} Linting",
-    "aboutDescription": "Leandro Ciric, desenvolvedor full-stack e fundador da Linting: experiência, projetos e tecnologias.",
     "githubTitle": "Atividade no GitHub {'|'} Linting",
     "githubDescription": "O que Leandro Ciric, fundador da Linting, tem construído e explorado no GitHub."
   },
   "nav": {
     "services": "Serviços",
     "products": "Produtos",
-    "about": "Sobre",
+    "about": "Fundador",
     "contact": "Fale conosco",
     "github": "GitHub",
     "mainNav": "Navegação principal",
@@ -26,7 +24,6 @@
     "note": "Você fala direto com quem escreve o código.",
     "ctaPrimary": "Solicitar orçamento",
     "ctaSecondary": "Ver serviços",
-    "origin": "O nome vem de \"lint\", apelido do fundador antes mesmo de programar.",
     "titleAccent": "sem ruído.",
     "editor": {
       "problems": "nenhum problema | 1 problema | {count} problemas",
@@ -130,9 +127,9 @@
     "name": "Leandro Ciric",
     "role": "Fundador e desenvolvedor full-stack",
     "bio": "Desenvolvedor full-stack desde 2021, com passagem por Stefanini, 7waves e Consorciocred. Trabalha com React, Vue, React Native, Node.js e .NET, e criou o AgentBox e o Hatch para levar agentes de IA ao trabalho de verdade.",
-    "cta": "Ver currículo completo",
     "photoAlt": "Foto de Leandro Ciric",
-    "eyebrow": "04 · Fundador"
+    "eyebrow": "04 · Fundador",
+    "origin": "\"lint\" era meu apelido antes de eu programar. Quando comecei a escrever código, a empresa virou \"linting\"."
   },
   "contact": {
     "title": "Vamos tirar seu projeto do papel?",
@@ -143,34 +140,6 @@
     "emailSubject": "Projeto com a Linting",
     "elsewhere": "Ou encontre a gente em",
     "eyebrow": "Contato"
-  },
-  "about": {
-    "title": "Sobre o fundador",
-    "intro": "Olá, eu sou Leandro. Criei a Linting para fazer software do jeito que eu gosto de trabalhar: código limpo, escopo claro e conversa direta com o cliente.",
-    "origin": "\"lint\" era meu apelido antes de eu programar. Quando comecei a escrever código, a empresa virou \"linting\".",
-    "back": "Voltar para a Linting",
-    "hire": "Contratar a Linting"
-  },
-  "experience": {
-    "title": "Experiência",
-    "subtitle": "Trajetória profissional como desenvolvedor",
-    "present": "Atual",
-    "remote": "Remoto",
-    "remoteUs": "Remoto (EUA - Michigan)"
-  },
-  "projects": {
-    "title": "Projetos",
-    "subtitle": "Alguns dos projetos mais relevantes",
-    "featured": "Destaque",
-    "live": "Ver online",
-    "source": "Código"
-  },
-  "skills": {
-    "title": "Tecnologias",
-    "subtitle": "Linguagens, frameworks e ferramentas do dia a dia",
-    "languages": "Linguagens",
-    "frameworks": "Frameworks e bibliotecas",
-    "tools": "Ferramentas e plataformas"
   },
   "github": {
     "title": "Atividade no GitHub",

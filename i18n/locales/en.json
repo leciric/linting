@@ -2,15 +2,13 @@
   "meta": {
     "title": "Linting {'|'} Software development, apps and AI agents",
     "description": "Linting builds web and mobile apps, websites, MVPs and AI agents wired into your business's tools. You talk directly to the person writing the code.",
-    "aboutTitle": "About the founder {'|'} Linting",
-    "aboutDescription": "Leandro Ciric, full-stack developer and founder of Linting: experience, projects and tech stack.",
     "githubTitle": "GitHub activity {'|'} Linting",
     "githubDescription": "What Leandro Ciric, founder of Linting, has been building and exploring on GitHub."
   },
   "nav": {
     "services": "Services",
     "products": "Products",
-    "about": "About",
+    "about": "Founder",
     "contact": "Get in touch",
     "github": "GitHub",
     "mainNav": "Main navigation",
@@ -26,7 +24,6 @@
     "note": "You talk directly to the person writing the code.",
     "ctaPrimary": "Request a quote",
     "ctaSecondary": "See services",
-    "origin": "The name comes from \"lint\", the founder's nickname from before writing any code.",
     "titleAccent": "without the noise.",
     "editor": {
       "problems": "no problems | 1 problem | {count} problems",
@@ -130,9 +127,9 @@
     "name": "Leandro Ciric",
     "role": "Founder and full-stack developer",
     "bio": "Full-stack developer since 2021, with time at Stefanini, 7waves and Consorciocred. Works with React, Vue, React Native, Node.js and .NET, and built AgentBox and Hatch to put AI agents to real work.",
-    "cta": "See the full résumé",
     "photoAlt": "Photo of Leandro Ciric",
-    "eyebrow": "04 · Founder"
+    "eyebrow": "04 · Founder",
+    "origin": "\"lint\" was my nickname before I ever programmed. When I started writing code, the company became \"linting\"."
   },
   "contact": {
     "title": "Ready to get your project off the ground?",
@@ -143,34 +140,6 @@
     "emailSubject": "Project with Linting",
     "elsewhere": "Or find us on",
     "eyebrow": "Contact"
-  },
-  "about": {
-    "title": "About the founder",
-    "intro": "Hi, I'm Leandro. I started Linting to build software the way I like to work: clean code, a clear scope and talking directly with the client.",
-    "origin": "\"lint\" was my nickname before I ever programmed. When I started writing code, the company became \"linting\".",
-    "back": "Back to Linting",
-    "hire": "Hire Linting"
-  },
-  "experience": {
-    "title": "Experience",
-    "subtitle": "My professional journey as a developer",
-    "present": "Present",
-    "remote": "Remote",
-    "remoteUs": "Remote (US - Michigan)"
-  },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "Some of the most relevant projects",
-    "featured": "Featured",
-    "live": "Live Demo",
-    "source": "Source"
-  },
-  "skills": {
-    "title": "Skills",
-    "subtitle": "Technologies and tools I work with",
-    "languages": "Languages",
-    "frameworks": "Frameworks & Libraries",
-    "tools": "Tools & Platforms"
   },
   "github": {
     "title": "GitHub Activity",

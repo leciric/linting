@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { contactLinks } from '~/data/portfolio'
-import { company, mailtoUrl, whatsappUrl } from '~/data/company'
+import { company, contactLinks, mailtoUrl, whatsappUrl } from '~/data/company'
 
 const { t } = useI18n()
 </script>

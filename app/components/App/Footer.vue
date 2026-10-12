@@ -25,7 +25,6 @@ const socialLinks = [
         <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
           <!-- Site Links -->
           <div class="flex items-center gap-4 text-sm text-zinc-600 dark:text-zinc-400">
-            <NuxtLink :to="localePath('/about')" class="hover:text-primary-600 dark:hover:text-primary-400">{{ t('nav.about') }}</NuxtLink>
             <NuxtLink :to="localePath('/github')" class="hover:text-primary-600 dark:hover:text-primary-400">{{ t('nav.github') }}</NuxtLink>
           </div>
 

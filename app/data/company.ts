@@ -44,3 +44,16 @@ export const products: Product[] = [
 ]
 
 export const hatchMcpCommand = 'claude mcp add --transport http hatch https://hatch.linting.dev/mcp'
+
+export interface ContactLink {
+  name: string
+  url: string
+  handle: string
+  icon: string
+}
+
+export const contactLinks: ContactLink[] = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/leandrociric/', handle: 'in/leandrociric', icon: 'lucide:linkedin' },
+  { name: 'GitHub', url: 'https://github.com/leciric', handle: '@leciric', icon: 'lucide:github' },
+  { name: 'Instagram', url: 'https://www.instagram.com/leciric/', handle: '@leciric', icon: 'lucide:instagram' },
+]
