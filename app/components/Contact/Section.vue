@@ -10,7 +10,7 @@ const { t } = useI18n()
       v-motion
       :initial="{ opacity: 0, y: 30 }"
       :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-      class="relative overflow-hidden rounded-3xl bg-primary-600 text-white px-6 py-12 sm:px-14 sm:py-16"
+      class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-600 to-indigo-600 text-white px-6 py-12 sm:px-14 sm:py-16"
     >
       <!-- Squiggle that straightens, echoing the logo -->
       <svg
@@ -36,7 +36,7 @@ const { t } = useI18n()
             :href="whatsappUrl(t('contact.whatsappMessage'))"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-semibold rounded-xl bg-ink text-white hover:bg-stone-900 transition-all active:scale-[0.98]"
+            class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-semibold rounded-xl bg-ink text-white hover:bg-zinc-800 transition-all active:scale-[0.98]"
           >
             <Icon name="logos:whatsapp-icon" class="w-5 h-5" />
             {{ t('contact.whatsapp') }}

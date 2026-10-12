@@ -38,21 +38,21 @@ const points = (id: string) => (tm(`services.${id}.points`) as unknown[]).map(p 
           <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-primary-600 text-white dark:bg-primary-500/15 dark:text-primary-400 dark:ring-1 dark:ring-primary-500/30">
             <Icon :name="service.icon" class="w-5 h-5" />
           </div>
-          <span class="font-mono text-xs text-stone-400 dark:text-stone-600">{{ String(index + 1).padStart(2, '0') }}</span>
+          <span class="font-mono text-xs text-zinc-400 dark:text-zinc-600">{{ String(index + 1).padStart(2, '0') }}</span>
         </div>
-        <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-stone-900 dark:text-stone-50 mb-3">
+        <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 mb-3">
           {{ t(`services.${service.id}.title`) }}
         </h3>
-        <p class="text-sm sm:text-base text-stone-600 dark:text-stone-400 mb-5 leading-relaxed">
+        <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mb-5 leading-relaxed">
           {{ t(`services.${service.id}.description`) }}
         </p>
-        <ul class="space-y-2 mb-6 text-sm text-stone-700 dark:text-stone-300">
+        <ul class="space-y-2 mb-6 text-sm text-zinc-700 dark:text-zinc-300">
           <li v-for="point in points(service.id)" :key="point" class="flex gap-2.5">
             <Icon name="lucide:check" class="w-4 h-4 mt-0.5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
             {{ point }}
           </li>
         </ul>
-        <div class="mt-auto pt-5 border-t border-dashed border-stone-900/10 dark:border-white/10 flex flex-wrap gap-1.5" :aria-label="t('services.stack')">
+        <div class="mt-auto pt-5 border-t border-dashed border-zinc-900/10 dark:border-white/10 flex flex-wrap gap-1.5" :aria-label="t('services.stack')">
           <span v-for="tech in service.stack" :key="tech" class="chip">{{ tech }}</span>
         </div>
       </article>

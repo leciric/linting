@@ -15,7 +15,7 @@ const steps = computed(() =>
 
     <ol class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
       <!-- The line that joins the steps -->
-      <div class="hidden lg:block absolute top-5 left-5 right-5 h-px bg-gradient-to-r from-primary-500/60 via-stone-900/15 dark:via-white/15 to-transparent" aria-hidden="true" />
+      <div class="hidden lg:block absolute top-5 left-5 right-5 h-px bg-gradient-to-r from-primary-500/60 via-zinc-900/15 dark:via-white/15 to-transparent" aria-hidden="true" />
       <li
         v-for="(step, index) in steps"
         :key="step.title"
@@ -28,10 +28,10 @@ const steps = computed(() =>
           class="relative z-10 flex items-center justify-center w-10 h-10 mb-5 rounded-full font-mono text-sm border bg-paper dark:bg-ink"
           :class="index === 0
             ? 'border-primary-500 text-primary-600 dark:border-primary-400 dark:text-primary-400'
-            : 'border-stone-900/15 text-stone-500 dark:border-white/15'"
+            : 'border-zinc-900/15 text-zinc-500 dark:border-white/15'"
         >{{ String(index + 1).padStart(2, '0') }}</span>
-        <h3 class="text-lg font-semibold text-stone-900 dark:text-stone-50 mb-2">{{ step.title }}</h3>
-        <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">{{ step.description }}</p>
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-50 mb-2">{{ step.title }}</h3>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{{ step.description }}</p>
       </li>
     </ol>
   </section>

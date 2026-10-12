@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-paper dark:bg-ink text-stone-900 dark:text-stone-100;
+    @apply bg-paper dark:bg-ink text-zinc-900 dark:text-zinc-100;
     @apply transition-colors duration-300;
     @apply font-sans antialiased;
     /* Prevent horizontal overflow on mobile; clip, unlike hidden, keeps the sticky header working */
@@ -12,7 +12,7 @@
   }
 
   ::selection {
-    @apply bg-primary-500 text-white;
+    @apply bg-primary-500/30;
   }
 
   /* Better touch targets on mobile */
@@ -32,11 +32,16 @@
 
   /* Surfaces: a hairline border over a faint fill, so the background grid shows through */
   .card {
-    @apply rounded-2xl border border-stone-900/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03];
+    @apply rounded-2xl border border-zinc-200 bg-zinc-50/80 dark:border-zinc-800/70 dark:bg-zinc-900/40;
   }
 
   .card-hover {
     @apply transition-colors duration-300 hover:border-primary-600/40 dark:hover:border-primary-400/40;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.primary.500');
+    outline-offset: 2px;
   }
 
   .eyebrow {
@@ -48,15 +53,15 @@
   }
 
   .chip {
-    @apply inline-flex items-center px-2 py-0.5 rounded-md font-mono text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 border border-stone-900/10 dark:border-white/10 bg-stone-900/[0.03] dark:bg-white/[0.04];
+    @apply inline-flex items-center px-2 py-0.5 rounded-md font-mono text-[11px] sm:text-xs text-zinc-600 dark:text-zinc-400 border border-zinc-900/10 dark:border-white/10 bg-zinc-900/[0.03] dark:bg-white/[0.04];
   }
 }
 
 /* Page background: a grid that fades out, a glow at the top, and grain */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgb(22 19 15 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(22 19 15 / 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgb(9 9 11 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(9 9 11 / 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 100%);
 }

@@ -47,8 +47,8 @@ const tokenClass: Record<Token[0], string> = {
   str: 'text-amber-700 dark:text-amber-200',
   num: 'text-orange-600 dark:text-orange-300',
   type: 'text-teal-600 dark:text-teal-300',
-  op: 'text-stone-500',
-  cm: 'text-stone-400 italic',
+  op: 'text-zinc-500',
+  cm: 'text-zinc-400 italic',
   '': '',
 }
 
@@ -79,19 +79,19 @@ onUnmounted(() => clearTimeout(timer))
 <template>
   <div class="card overflow-hidden shadow-2xl shadow-black/10 dark:shadow-black/50 font-mono text-[10px] xs:text-xs sm:text-[13px]" aria-hidden="true">
     <!-- Title bar -->
-    <div class="flex items-center gap-3 px-4 h-10 border-b border-stone-900/10 dark:border-white/10">
+    <div class="flex items-center gap-3 px-4 h-10 border-b border-zinc-900/10 dark:border-white/10">
       <div class="flex gap-1.5">
-        <span class="w-2.5 h-2.5 rounded-full bg-stone-900/15 dark:bg-white/15" />
-        <span class="w-2.5 h-2.5 rounded-full bg-stone-900/15 dark:bg-white/15" />
-        <span class="w-2.5 h-2.5 rounded-full bg-stone-900/15 dark:bg-white/15" />
+        <span class="w-2.5 h-2.5 rounded-full bg-zinc-900/15 dark:bg-white/15" />
+        <span class="w-2.5 h-2.5 rounded-full bg-zinc-900/15 dark:bg-white/15" />
+        <span class="w-2.5 h-2.5 rounded-full bg-zinc-900/15 dark:bg-white/15" />
       </div>
-      <span class="px-2.5 py-1 rounded-md bg-stone-900/5 dark:bg-white/[0.06] text-stone-700 dark:text-stone-300">checkout.ts</span>
+      <span class="px-2.5 py-1 rounded-md bg-zinc-900/5 dark:bg-white/[0.06] text-zinc-700 dark:text-zinc-300">checkout.ts</span>
     </div>
 
     <!-- Code -->
     <div class="py-4 overflow-x-auto">
       <div v-for="(line, index) in lines" :key="index" class="flex leading-6 pr-4">
-        <span class="w-7 sm:w-10 flex-shrink-0 pr-2 sm:pr-3 text-right select-none text-stone-400 dark:text-stone-600">{{ index + 1 }}</span>
+        <span class="w-7 sm:w-10 flex-shrink-0 pr-2 sm:pr-3 text-right select-none text-zinc-400 dark:text-zinc-600">{{ index + 1 }}</span>
         <span
           class="w-3 flex-shrink-0 flex items-center"
         >
@@ -102,7 +102,7 @@ onUnmounted(() => clearTimeout(timer))
           />
         </span>
         <code
-          class="whitespace-pre text-stone-800 dark:text-stone-200"
+          class="whitespace-pre text-zinc-800 dark:text-zinc-200"
           :class="line.problem && ['squiggle', isFixed(index) && 'squiggle-fixed']"
         ><span
           v-for="(token, ti) in (isFixed(index) && line.fixed ? line.fixed : line.tokens)"
@@ -113,8 +113,8 @@ onUnmounted(() => clearTimeout(timer))
     </div>
 
     <!-- Problems panel -->
-    <div class="border-t border-stone-900/10 dark:border-white/10 px-4 py-3 space-y-1.5 bg-stone-900/[0.02] dark:bg-white/[0.02]">
-      <p class="text-[10px] uppercase tracking-[0.18em] text-stone-500 mb-2">{{ t('hero.editor.panel') }}</p>
+    <div class="border-t border-zinc-900/10 dark:border-white/10 px-4 py-3 space-y-1.5 bg-zinc-900/[0.02] dark:bg-white/[0.02]">
+      <p class="text-[10px] uppercase tracking-[0.18em] text-zinc-500 mb-2">{{ t('hero.editor.panel') }}</p>
       <div
         v-for="index in problemLines"
         :key="index"
@@ -126,15 +126,15 @@ onUnmounted(() => clearTimeout(timer))
           class="w-3.5 h-3.5 flex-shrink-0"
           :class="isFixed(index) ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500'"
         />
-        <span class="truncate text-stone-700 dark:text-stone-300" :class="isFixed(index) && 'line-through'">{{ lines[index]!.problem!.message }}</span>
-        <span class="ml-auto flex-shrink-0 text-stone-400 dark:text-stone-500">{{ lines[index]!.problem!.rule }} [{{ index + 1 }}:{{ lines[index]!.problem!.col }}]</span>
+        <span class="truncate text-zinc-700 dark:text-zinc-300" :class="isFixed(index) && 'line-through'">{{ lines[index]!.problem!.message }}</span>
+        <span class="ml-auto flex-shrink-0 text-zinc-400 dark:text-zinc-500">{{ lines[index]!.problem!.rule }} [{{ index + 1 }}:{{ lines[index]!.problem!.col }}]</span>
       </div>
     </div>
 
     <!-- Status bar -->
     <div
       class="flex items-center gap-2 px-4 h-9 text-[11px] sm:text-xs font-medium transition-colors duration-500"
-      :class="remaining === 0 ? 'bg-emerald-500 text-white dark:bg-emerald-500/20 dark:text-emerald-300' : 'bg-stone-900 text-stone-100 dark:bg-white/10'"
+      :class="remaining === 0 ? 'bg-emerald-500 text-white dark:bg-emerald-500/20 dark:text-emerald-300' : 'bg-zinc-900 text-zinc-100 dark:bg-white/10'"
     >
       <Icon :name="remaining === 0 ? 'lucide:check-circle-2' : 'lucide:loader-circle'" class="w-3.5 h-3.5" :class="remaining > 0 && 'animate-spin'" />
       <span>{{ t('hero.editor.problems', remaining) }}</span>
