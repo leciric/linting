@@ -9,7 +9,12 @@ useHead(() => ({
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="relative min-h-screen flex flex-col isolate overflow-x-clip">
+    <!-- Background -->
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[1100px] -z-10 bg-grid" aria-hidden="true" />
+    <div class="pointer-events-none absolute left-1/2 top-[-280px] -z-10 h-[560px] w-[min(1100px,140vw)] -translate-x-1/2 rounded-full bg-primary-400/25 dark:bg-primary-400/15 blur-[120px]" aria-hidden="true" />
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-grain" aria-hidden="true" />
+
     <AppHeader />
     <main class="flex-1">
       <slot />

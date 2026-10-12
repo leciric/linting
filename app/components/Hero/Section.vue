@@ -1,20 +1,34 @@
 <script setup lang="ts">
 const { t } = useI18n()
+
+const stack = [
+  { name: 'TypeScript', icon: 'logos:typescript-icon' },
+  { name: 'React', icon: 'logos:react' },
+  { name: 'Vue', icon: 'logos:vue' },
+  { name: 'Nuxt', icon: 'logos:nuxt-icon' },
+  { name: 'Next.js', icon: 'logos:nextjs-icon' },
+  { name: 'React Native', icon: 'logos:react' },
+  { name: 'Node.js', icon: 'logos:nodejs-icon' },
+  { name: '.NET', icon: 'logos:dotnet' },
+  { name: 'PostgreSQL', icon: 'logos:postgresql' },
+  { name: 'Docker', icon: 'logos:docker-icon' },
+]
+
+const stats = ['years', 'areas', 'products'] as const
 </script>
 
 <template>
-  <section class="relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
-    <!-- Linting Animation Background -->
-    <HeroLintAnimation class="absolute inset-0 z-0" />
-    <div class="relative z-10 w-full max-w-5xl mx-auto">
-      <div class="max-w-3xl">
+  <section class="relative max-w-[76rem] mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 lg:pt-24 pb-4">
+    <div class="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-14 items-center">
+      <div>
         <!-- Eyebrow -->
         <p
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: 100 } }"
-          class="text-primary-600 dark:text-primary-400 font-medium mb-3 sm:mb-4 text-sm sm:text-base uppercase tracking-wider"
+          class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-stone-900/10 dark:border-white/10 bg-white/60 dark:bg-white/[0.04] font-mono text-[11px] sm:text-xs uppercase tracking-[0.16em] text-stone-600 dark:text-stone-400"
         >
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-500 dark:bg-primary-400 shadow-[0_0_10px_rgb(229_83_47)]" />
           {{ t('hero.eyebrow') }}
         </p>
 
@@ -23,9 +37,10 @@ const { t } = useI18n()
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: 200 } }"
-          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-100 mb-4 sm:mb-6 leading-tight"
+          class="text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem] font-semibold tracking-[-0.035em] text-stone-900 dark:text-stone-50 mb-6 text-balance"
         >
           {{ t('hero.title') }}
+          <span class="accent-serif text-primary-600 dark:text-primary-400">{{ t('hero.titleAccent') }}</span>
         </h1>
 
         <!-- Description -->
@@ -33,50 +48,62 @@ const { t } = useI18n()
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: 300 } }"
-          class="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-3 sm:mb-4 leading-relaxed"
+          class="text-base sm:text-lg text-stone-600 dark:text-stone-400 max-w-xl mb-8 leading-relaxed"
         >
           {{ t('hero.description') }}
-          <span class="text-zinc-900 dark:text-zinc-100 font-medium">{{ t('hero.note') }}</span>
-        </p>
-
-        <!-- Origin Story -->
-        <p
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 400 } }"
-          class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-500 max-w-xl mb-6 sm:mb-8 leading-relaxed italic"
-        >
-          {{ t('hero.origin') }}
+          <span class="text-stone-900 dark:text-stone-100 font-medium">{{ t('hero.note') }}</span>
         </p>
 
         <!-- CTA Buttons -->
         <div
           v-motion
           :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: 500 } }"
-          class="flex flex-col sm:flex-row gap-3 sm:gap-4"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 400 } }"
+          class="flex flex-col xs:flex-row gap-3"
         >
-          <UIButton href="#contact" variant="primary" size="lg" class="w-full sm:w-auto justify-center">
+          <UIButton href="#contact" variant="primary" size="lg" class="justify-center">
             {{ t('hero.ctaPrimary') }}
             <Icon name="lucide:arrow-right" class="w-5 h-5" />
           </UIButton>
-          <UIButton href="#services" variant="outline" size="lg" class="w-full sm:w-auto justify-center">
+          <UIButton href="#services" variant="outline" size="lg" class="justify-center">
             {{ t('hero.ctaSecondary') }}
           </UIButton>
         </div>
       </div>
 
-      <!-- Scroll indicator -->
+      <!-- Editor -->
       <div
         v-motion
-        :initial="{ opacity: 0 }"
-        :enter="{ opacity: 1, transition: { delay: 800 } }"
-        class="hidden md:flex justify-center mt-12 lg:mt-16 animate-bounce"
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 450, duration: 600 } }"
+        class="relative min-w-0"
       >
-        <a href="#services" :aria-label="t('nav.services')" class="text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-          <Icon name="lucide:chevrons-down" class="w-8 h-8" />
-        </a>
+        <div class="absolute -inset-6 -z-10 rounded-[2rem] bg-primary-400/20 dark:bg-primary-400/10 blur-3xl" aria-hidden="true" />
+        <HeroLintEditor />
       </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 border-y border-stone-900/10 dark:border-white/10 divide-y sm:divide-y-0 sm:divide-x divide-stone-900/10 dark:divide-white/10">
+      <div v-for="stat in stats" :key="stat" class="py-5 sm:py-6 sm:px-6 first:sm:pl-0 flex items-baseline gap-3">
+        <span class="text-3xl sm:text-4xl font-semibold tracking-tight text-stone-900 dark:text-stone-50">{{ t(`stats.${stat}Value`) }}</span>
+        <span class="text-sm text-stone-600 dark:text-stone-400">{{ t(`stats.${stat}`) }}</span>
+      </div>
+    </div>
+
+    <!-- Stack -->
+    <div class="mt-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+      <p class="eyebrow !text-stone-500 flex-shrink-0">{{ t('stats.stack') }}</p>
+      <ul class="flex flex-wrap gap-x-5 gap-y-3">
+        <li
+          v-for="tech in stack"
+          :key="tech.name"
+          class="flex items-center gap-2 text-sm text-stone-500 dark:text-stone-400 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition"
+        >
+          <Icon :name="tech.icon" class="w-4 h-4" />
+          {{ tech.name }}
+        </li>
+      </ul>
     </div>
   </section>
 </template>

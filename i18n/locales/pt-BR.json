@@ -1,16 +1,13 @@
 {
   "meta": {
     "title": "Linting {'|'} Desenvolvimento de software, apps e agentes de IA",
-    "description": "A Linting cria aplicativos web e mobile, sites, MVPs e agentes de IA integrados às ferramentas do seu negócio. Você fala direto com quem desenvolve.",
-    "githubTitle": "Atividade no GitHub {'|'} Linting",
-    "githubDescription": "O que Leandro Ciric, fundador da Linting, tem construído e explorado no GitHub."
+    "description": "A Linting cria aplicativos web e mobile, sites, MVPs e agentes de IA integrados às ferramentas do seu negócio. Você fala direto com quem desenvolve."
   },
   "nav": {
     "services": "Serviços",
     "products": "Produtos",
     "about": "Fundador",
     "contact": "Fale conosco",
-    "github": "GitHub",
     "mainNav": "Navegação principal",
     "home": "Linting - Início",
     "language": "Idioma",
@@ -141,25 +138,14 @@
     "elsewhere": "Ou encontre a gente em",
     "eyebrow": "Contato"
   },
-  "github": {
-    "title": "Atividade no GitHub",
-    "subtitle": "O que tenho explorado e construído",
-    "activity": "Atividade",
-    "starred": "Favoritos",
-    "profile": "Ver perfil no GitHub",
-    "activityError": "Não foi possível carregar a atividade",
-    "activityEmpty": "Nenhuma atividade recente",
-    "starredError": "Não foi possível carregar os repositórios favoritos",
-    "starredEmpty": "Nenhum repositório favorito ainda"
-  },
   "footer": {
     "rights": "Todos os direitos reservados."
   },
   "stats": {
     "years": "anos desenvolvendo software",
     "yearsValue": "5+",
-    "areas": "web, mobile e IA, do front ao banco",
-    "areasValue": "3 frentes",
+    "areas": "frentes: web, mobile e IA, do front ao banco",
+    "areasValue": "3",
     "products": "produtos próprios no ar",
     "productsValue": "2",
     "stack": "Stack do dia a dia"

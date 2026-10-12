@@ -2,11 +2,12 @@
 interface Props {
   title: string
   subtitle?: string
+  eyebrow?: string
   centered?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
-  centered: true,
+  centered: false,
 })
 </script>
 
@@ -15,17 +16,14 @@ withDefaults(defineProps<Props>(), {
     v-motion
     :initial="{ opacity: 0, y: 30 }"
     :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-    :class="['mb-8 sm:mb-12', centered && 'text-center']"
+    :class="['mb-10 sm:mb-14 max-w-3xl', centered && 'text-center mx-auto']"
   >
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2 sm:mb-4">
+    <p v-if="eyebrow" class="eyebrow mb-4">{{ eyebrow }}</p>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-stone-900 dark:text-stone-50 mb-3 sm:mb-4 text-balance">
       {{ title }}
     </h2>
-    <p v-if="subtitle" class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl" :class="centered && 'mx-auto'">
+    <p v-if="subtitle" class="text-base sm:text-lg text-stone-600 dark:text-stone-400 max-w-2xl" :class="centered && 'mx-auto'">
       {{ subtitle }}
     </p>
-    <div 
-      class="mt-3 sm:mt-4 h-1 w-12 sm:w-16 bg-gradient-to-r from-primary-600 to-primary-400 rounded-full"
-      :class="centered && 'mx-auto'"
-    />
   </div>
 </template>

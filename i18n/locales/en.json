@@ -1,16 +1,13 @@
 {
   "meta": {
     "title": "Linting {'|'} Software development, apps and AI agents",
-    "description": "Linting builds web and mobile apps, websites, MVPs and AI agents wired into your business's tools. You talk directly to the person writing the code.",
-    "githubTitle": "GitHub activity {'|'} Linting",
-    "githubDescription": "What Leandro Ciric, founder of Linting, has been building and exploring on GitHub."
+    "description": "Linting builds web and mobile apps, websites, MVPs and AI agents wired into your business's tools. You talk directly to the person writing the code."
   },
   "nav": {
     "services": "Services",
     "products": "Products",
     "about": "Founder",
     "contact": "Get in touch",
-    "github": "GitHub",
     "mainNav": "Main navigation",
     "home": "Linting - Home",
     "language": "Language",
@@ -141,25 +138,14 @@
     "elsewhere": "Or find us on",
     "eyebrow": "Contact"
   },
-  "github": {
-    "title": "GitHub Activity",
-    "subtitle": "What I've been exploring and building",
-    "activity": "Activity",
-    "starred": "Starred",
-    "profile": "View Profile on GitHub",
-    "activityError": "Failed to load activity",
-    "activityEmpty": "No recent activity",
-    "starredError": "Failed to load starred repositories",
-    "starredEmpty": "No starred repositories yet"
-  },
   "footer": {
     "rights": "All rights reserved."
   },
   "stats": {
     "years": "years building software",
     "yearsValue": "5+",
-    "areas": "web, mobile and AI, front end to database",
-    "areasValue": "3 fronts",
+    "areas": "fronts: web, mobile and AI, front end to database",
+    "areasValue": "3",
     "products": "products of our own, live",
     "productsValue": "2",
     "stack": "Everyday stack"

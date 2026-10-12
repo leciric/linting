@@ -4,11 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100;
+    @apply bg-paper dark:bg-ink text-stone-900 dark:text-stone-100;
     @apply transition-colors duration-300;
     @apply font-sans antialiased;
-    /* Prevent horizontal overflow on mobile */
-    @apply overflow-x-hidden;
+    /* Prevent horizontal overflow on mobile; clip, unlike hidden, keeps the sticky header working */
+    overflow-x: clip;
+  }
+
+  ::selection {
+    @apply bg-primary-500 text-white;
   }
 
   /* Better touch targets on mobile */
@@ -19,12 +23,69 @@
 
 @layer components {
   .section-container {
-    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24;
+    @apply max-w-[76rem] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 to-primary-500 dark:from-primary-300 dark:to-primary-500 bg-clip-text text-transparent;
   }
+
+  /* Surfaces: a hairline border over a faint fill, so the background grid shows through */
+  .card {
+    @apply rounded-2xl border border-stone-900/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03];
+  }
+
+  .card-hover {
+    @apply transition-colors duration-300 hover:border-primary-600/40 dark:hover:border-primary-400/40;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs sm:text-sm uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400;
+  }
+
+  .accent-serif {
+    @apply font-serif italic font-normal tracking-normal;
+  }
+
+  .chip {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md font-mono text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 border border-stone-900/10 dark:border-white/10 bg-stone-900/[0.03] dark:bg-white/[0.04];
+  }
+}
+
+/* Page background: a grid that fades out, a glow at the top, and grain */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(22 19 15 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(22 19 15 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 100%);
+}
+
+.dark .bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+}
+
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+}
+
+.dark .bg-grain {
+  opacity: 0.06;
+}
+
+/* Lint squiggle under a line of code */
+.squiggle {
+  text-decoration: underline wavy rgb(239 68 68 / 0.9);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.4s ease;
+}
+
+.squiggle-fixed {
+  text-decoration-color: transparent;
 }
 
 /* Page transitions */
@@ -43,7 +104,7 @@
 html {
   scroll-behavior: smooth;
   /* Prevent horizontal overflow */
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Better mobile scrolling */

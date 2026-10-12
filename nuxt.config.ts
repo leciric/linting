@@ -56,7 +56,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'author', content: 'Leandro Ciric' },
         { name: 'robots', content: 'index, follow' },
-        { name: 'theme-color', content: '#0a0a0b' },
+        { name: 'theme-color', content: '#16130f' },
         { property: 'og:site_name', content: 'Linting' },
       ],
       link: [

@@ -43,7 +43,8 @@ export const products: Product[] = [
   },
 ]
 
-export const hatchMcpCommand = 'claude mcp add --transport http hatch https://hatch.linting.dev/mcp'
+// The command, split where the terminal card breaks it
+export const hatchMcpCommand = ['claude mcp add --transport http hatch', 'https://hatch.linting.dev/mcp'] as const
 
 export interface ContactLink {
   name: string
