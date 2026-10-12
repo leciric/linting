@@ -5,6 +5,8 @@ defineProps<{
   project: Project
   index?: number
 }>()
+
+const { t, locale } = useI18n()
 </script>
 
 <template>
@@ -20,7 +22,7 @@ defineProps<{
       v-if="project.featured"
       class="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 px-2 py-0.5 sm:px-3 sm:py-1 text-xs font-medium bg-primary-600 text-white rounded-full"
     >
-      Featured
+      {{ t('projects.featured') }}
     </div>
 
     <!-- Content -->
@@ -32,7 +34,7 @@ defineProps<{
 
       <!-- Description -->
       <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mb-3 sm:mb-4 leading-relaxed">
-        {{ project.description }}
+        {{ project.description[locale] }}
       </p>
 
       <!-- Tags -->
@@ -56,7 +58,7 @@ defineProps<{
           class="inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline"
         >
           <Icon name="lucide:external-link" class="w-4 h-4" />
-          Live Demo
+          {{ t('projects.live') }}
         </a>
         <a
           v-if="project.githubUrl"
@@ -66,7 +68,7 @@ defineProps<{
           class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
         >
           <Icon name="lucide:github" class="w-4 h-4" />
-          Source
+          {{ t('projects.source') }}
         </a>
       </div>
     </div>

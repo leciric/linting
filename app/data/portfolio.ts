@@ -2,9 +2,11 @@ export interface Job {
   title: string
   company: string
   companyUrl?: string
-  location: string
+  // i18n key under experience.*
+  location: 'remote' | 'remoteUs'
+  // YYYY-MM
   startDate: string
-  endDate: string | 'Present'
+  endDate: string | 'present'
   technologies: string[]
 }
 
@@ -13,33 +15,33 @@ export const jobs: Job[] = [
     title: 'Full-stack Engineer',
     company: 'Stefanini',
     companyUrl: 'https://stefanini.com/',
-    location: 'Remote (US - Michigan)',
-    startDate: 'Aug 2023',
-    endDate: 'Present',
+    location: 'remoteUs',
+    startDate: '2023-08',
+    endDate: 'present',
     technologies: ['Vue', 'TypeScript', 'Node.js', '.NET'],
   },
   {
     title: 'Full-stack Developer',
     company: '7waves',
-    location: 'Remote',
-    startDate: 'Apr 2022',
-    endDate: 'Jun 2023',
+    location: 'remote',
+    startDate: '2022-04',
+    endDate: '2023-06',
     technologies: ['React', 'TypeScript', 'Node.js', 'Java', 'Python'],
   },
   {
     title: 'Full-stack Developer',
     company: 'Consorciocred',
     companyUrl: 'https://www.consorciocred.com/',
-    location: 'Remote',
-    startDate: 'Apr 2021',
-    endDate: 'May 2024',
+    location: 'remote',
+    startDate: '2021-04',
+    endDate: '2024-05',
     technologies: ['React', 'TypeScript', 'Node.js'],
   },
 ]
 
 export interface Project {
   title: string
-  description: string
+  description: Record<'pt-BR' | 'en', string>
   image?: string
   tags: string[]
   liveUrl?: string
@@ -50,27 +52,39 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'Pet Track',
-    description: 'Mobile application for tracking pet health, vaccinations, and appointments. Built with React Native.',
+    description: {
+      'pt-BR': 'Aplicativo para acompanhar a saúde, as vacinas e as consultas do seu pet. Feito com React Native.',
+      en: 'Mobile application for tracking pet health, vaccinations, and appointments. Built with React Native.',
+    },
     tags: ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL'],
     featured: true,
   },
   {
-    title: 'This Website',
-    description: 'My personal portfolio website built with Nuxt 3 and Tailwind CSS.',
-    tags: ['Nuxt 3', 'Vue', 'TypeScript', 'Tailwind CSS'],
+    title: 'linting.dev',
+    description: {
+      'pt-BR': 'Este site: a página da Linting, em português e inglês, feita com Nuxt e Tailwind CSS.',
+      en: 'This website: Linting\'s page, in Portuguese and English, built with Nuxt and Tailwind CSS.',
+    },
+    tags: ['Nuxt', 'Vue', 'TypeScript', 'Tailwind CSS'],
     liveUrl: 'https://linting.dev',
     githubUrl: 'https://github.com/leciric/linting',
   },
   {
     title: "Don't Be Sedentary",
-    description: "Platform to help you stay active using a Pomodoro clock system with exercise breaks.",
+    description: {
+      'pt-BR': 'Plataforma que ajuda a manter uma rotina ativa com um relógio Pomodoro e pausas para exercícios.',
+      en: 'Platform to help you stay active using a Pomodoro clock system with exercise breaks.',
+    },
     tags: ['React', 'TypeScript', 'Next.js'],
     liveUrl: 'https://dontbesedentary.vercel.app/',
   },
 
   {
     title: 'Consorciocred',
-    description: 'Corporate website and lead management platform for consortium services.',
+    description: {
+      'pt-BR': 'Site institucional e plataforma de gestão de leads para serviços de consórcio.',
+      en: 'Corporate website and lead management platform for consortium services.',
+    },
     tags: ['React', 'TypeScript', 'Node.js'],
     liveUrl: 'https://www.consorciocred.com/',
   },
@@ -114,7 +128,6 @@ export interface ContactLink {
 }
 
 export const contactLinks: ContactLink[] = [
-  { name: 'Email', url: 'mailto:leandro@linting.dev', handle: 'leandro@linting.dev', icon: 'lucide:mail' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/leandrociric/', handle: 'in/leandrociric', icon: 'lucide:linkedin' },
   { name: 'GitHub', url: 'https://github.com/leciric', handle: '@leciric', icon: 'lucide:github' },
   { name: 'Instagram', url: 'https://www.instagram.com/leciric/', handle: '@leciric', icon: 'lucide:instagram' },

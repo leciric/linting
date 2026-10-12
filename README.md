@@ -2,7 +2,7 @@
 
 # linting.dev
 
-A modern, minimal personal portfolio website built with Nuxt 3, Vue 3, and Tailwind CSS.
+The website of Linting, Leandro Ciric's software company, built with Nuxt 4, Vue 3, and Tailwind CSS.
 
 [![Nuxt](https://img.shields.io/badge/Nuxt-4.3-00DC82?style=flat-square&logo=nuxt.js)](https://nuxt.com)
 [![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?style=flat-square&logo=vue.js)](https://vuejs.org)
@@ -18,9 +18,9 @@ A modern, minimal personal portfolio website built with Nuxt 3, Vue 3, and Tailw
 
 ## About
 
-**linting** is my personal portfolio and developer website. The name comes from my nickname "lint" - when I started coding, I named my company "linting".
+**Linting** is Leandro Ciric's software-services company. The name comes from the nickname "lint". This site presents Linting's services (web and mobile apps, AI agents and MCP integrations, websites, MVPs), its products ([AgentBox](https://github.com/leciric/agentbox) and [Hatch](https://github.com/leciric/hatch)), and the founder's résumé at `/about`.
 
-This site showcases my work, professional experience, and skills as a Full-stack Developer specializing in React, TypeScript, Node.js, and mobile applications.
+The site is in Brazilian Portuguese at `/` and English at `/en`, with [@nuxtjs/i18n](https://i18n.nuxtjs.org). Texts live in `i18n/locales/pt-BR.json` and `i18n/locales/en.json`; contact details, the CNPJ and product links in `app/data/company.ts`.
 
 ### Built With
 

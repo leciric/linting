@@ -1,50 +1,53 @@
 <script setup lang="ts">
-const route = useRoute()
+const { t } = useI18n()
+const localePath = useLocalePath()
 
-const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'GitHub', path: '/github' },
-]
-
-const isActive = (path: string) => route.path === path
+const navLinks = computed(() => [
+  { name: t('nav.services'), to: { path: localePath('/'), hash: '#services' } },
+  { name: t('nav.products'), to: { path: localePath('/'), hash: '#products' } },
+  { name: t('nav.about'), to: localePath('/about') },
+])
 </script>
 
 <template>
-  <header 
+  <header
     class="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800"
     role="banner"
   >
-    <nav 
-      class="max-w-5xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between"
+    <nav
+      class="max-w-5xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between gap-2"
       role="navigation"
-      aria-label="Main navigation"
+      :aria-label="t('nav.mainNav')"
     >
       <!-- Logo -->
-      <NuxtLink 
-        to="/" 
+      <NuxtLink
+        :to="localePath('/')"
         class="text-lg sm:text-xl font-bold text-primary-600 dark:text-primary-400 hover:opacity-80 transition-opacity"
-        aria-label="linting - Home"
+        :aria-label="t('nav.home')"
       >
         linting
       </NuxtLink>
 
       <!-- Navigation -->
-      <div class="flex items-center gap-3 sm:gap-6" role="menubar">
+      <div class="flex items-center gap-1.5 sm:gap-4">
         <NuxtLink
           v-for="link in navLinks"
-          :key="link.path"
-          :to="link.path"
-          class="text-sm font-medium transition-colors px-2 py-1"
-          :class="[
-            isActive(link.path)
-              ? 'text-primary-600 dark:text-primary-400'
-              : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
-          ]"
-          role="menuitem"
-          :aria-current="isActive(link.path) ? 'page' : undefined"
+          :key="link.name"
+          :to="link.to"
+          class="hidden md:inline-block text-sm font-medium transition-colors px-2 py-1 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+          exact-active-class="!text-primary-600 dark:!text-primary-400"
         >
           {{ link.name }}
         </NuxtLink>
+
+        <NuxtLink
+          :to="{ path: localePath('/'), hash: '#contact' }"
+          class="hidden xs:inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors"
+        >
+          {{ t('nav.contact') }}
+        </NuxtLink>
+
+        <UILanguageSwitch />
 
         <!-- Theme Toggle -->
         <UIThemeToggle />

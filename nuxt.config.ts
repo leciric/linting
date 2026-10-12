@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@vueuse/motion/nuxt',
     '@nuxtjs/sitemap',
+    '@nuxtjs/i18n',
   ],
 
   // Color mode configuration
@@ -33,57 +34,56 @@ export default defineNuxtConfig({
     cssPath: '~/assets/css/tailwind.css',
   },
 
-  // App configuration
+  // i18n: pt-BR at /, English at /en
+  i18n: {
+    baseUrl: 'https://linting.dev',
+    defaultLocale: 'pt-BR',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    locales: [
+      { code: 'pt-BR', language: 'pt-BR', name: 'Português', file: 'pt-BR.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+    ],
+  },
+
+  // App configuration (title, description and Open Graph tags are set per page and locale)
   app: {
     head: {
-      title: 'Leandro Ciric | Full-stack Developer',
-      htmlAttrs: {
-        lang: 'en',
-      },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Leandro Ciric - Full-stack Developer specializing in React, TypeScript, Node.js, and mobile applications. Building high-quality software solutions.' },
         { name: 'author', content: 'Leandro Ciric' },
-        { name: 'keywords', content: 'Full-stack Developer, React, TypeScript, Node.js, Vue.js, Nuxt, React Native, Mobile Development, Web Development' },
         { name: 'robots', content: 'index, follow' },
         { name: 'theme-color', content: '#4f46e5' },
-        // Open Graph
-        { property: 'og:title', content: 'Leandro Ciric | Full-stack Developer' },
-        { property: 'og:description', content: 'Full-stack Developer specializing in React, TypeScript, Node.js, and mobile applications.' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://linting.dev' },
-        { property: 'og:site_name', content: 'linting' },
-        { property: 'og:locale', content: 'en_US' },
-        // Twitter
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Leandro Ciric | Full-stack Developer' },
-        { name: 'twitter:description', content: 'Full-stack Developer specializing in React, TypeScript, Node.js, and mobile applications.' },
+        { property: 'og:site_name', content: 'Linting' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'canonical', href: 'https://linting.dev' },
       ],
       script: [
         {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Leandro Ciric',
-            alternateName: 'lint',
+            '@type': 'Organization',
+            name: 'Linting',
             url: 'https://linting.dev',
-            jobTitle: 'Full-stack Developer',
-            worksFor: {
-              '@type': 'Organization',
-              name: 'linting',
+            logo: 'https://linting.dev/favicon.svg',
+            founder: {
+              '@type': 'Person',
+              name: 'Leandro Ciric',
+              alternateName: 'lint',
+              url: 'https://linting.dev/about',
+              jobTitle: 'Full-stack Developer',
+              sameAs: [
+                'https://github.com/leciric',
+                'https://www.linkedin.com/in/leandrociric/',
+                'https://www.instagram.com/leciric/',
+              ],
             },
-            sameAs: [
-              'https://github.com/leciric',
-              'https://www.linkedin.com/in/leandrociric/',
-              'https://www.instagram.com/leciric/',
-            ],
-            knowsAbout: ['React', 'TypeScript', 'Node.js', 'Vue.js', 'React Native', 'Full-stack Development'],
+            sameAs: ['https://github.com/leciric'],
+            areaServed: 'BR',
+            knowsAbout: ['Web development', 'Mobile apps', 'AI agents', 'Model Context Protocol', 'React', 'Vue.js', 'Node.js'],
           }),
         },
       ],

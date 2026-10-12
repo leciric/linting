@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Linting {'|'} Desenvolvimento de software, apps e agentes de IA",
+    "description": "A Linting cria aplicativos web e mobile, sites, MVPs e agentes de IA integrados às ferramentas do seu negócio. Você fala direto com quem desenvolve.",
+    "aboutTitle": "Sobre o fundador {'|'} Linting",
+    "aboutDescription": "Leandro Ciric, desenvolvedor full-stack e fundador da Linting: experiência, projetos e tecnologias.",
+    "githubTitle": "Atividade no GitHub {'|'} Linting",
+    "githubDescription": "O que Leandro Ciric, fundador da Linting, tem construído e explorado no GitHub."
+  },
+  "nav": {
+    "services": "Serviços",
+    "products": "Produtos",
+    "about": "Sobre",
+    "contact": "Fale conosco",
+    "github": "GitHub",
+    "mainNav": "Navegação principal",
+    "home": "Linting - Início",
+    "language": "Idioma",
+    "lightMode": "Mudar para o tema claro",
+    "darkMode": "Mudar para o tema escuro"
+  },
+  "hero": {
+    "eyebrow": "Software sob medida, feito no Brasil",
+    "title": "Do primeiro commit à produção, sem ruído no caminho.",
+    "description": "A Linting desenvolve aplicativos web e mobile, sites, MVPs e agentes de IA conectados às ferramentas que o seu negócio já usa.",
+    "note": "Você fala direto com quem escreve o código.",
+    "ctaPrimary": "Solicitar orçamento",
+    "ctaSecondary": "Ver serviços",
+    "origin": "O nome vem de \"lint\", apelido do fundador antes mesmo de programar."
+  },
+  "services": {
+    "title": "O que a Linting faz",
+    "subtitle": "Quatro formas de trabalhar juntos, com a mesma base: código limpo, entregas frequentes e comunicação direta.",
+    "stack": "Tecnologias",
+    "apps": {
+      "title": "Aplicativos web e mobile sob medida",
+      "description": "Sistemas, painéis e apps para Android e iOS feitos para o seu processo, com front-end, API e banco de dados.",
+      "points": [
+        "Web com React, Next.js, Vue e Nuxt",
+        "Mobile com React Native",
+        "APIs em Node.js ou .NET com PostgreSQL"
+      ]
+    },
+    "ai": {
+      "title": "Agentes de IA e integrações MCP",
+      "description": "Conectamos o Claude e outras IAs às ferramentas do seu negócio, para que consultem dados e executem tarefas reais, não só respondam perguntas.",
+      "points": [
+        "Servidores MCP para seus sistemas, planilhas e APIs internas",
+        "Agentes com Claude que automatizam rotinas",
+        "A mesma experiência que construiu o AgentBox e o Hatch"
+      ]
+    },
+    "sites": {
+      "title": "Landing pages e sites",
+      "description": "Páginas rápidas, responsivas e prontas para SEO, para apresentar sua empresa ou lançar um produto.",
+      "points": [
+        "Nuxt, Next.js ou Astro com Tailwind CSS",
+        "Português e inglês quando precisar",
+        "Publicação na Vercel ou Cloudflare"
+      ]
+    },
+    "mvp": {
+      "title": "Desenvolvimento de produto e MVP",
+      "description": "Da ideia à primeira versão no ar: escopo enxuto, entregas semanais e um produto que você pode colocar na mão dos clientes.",
+      "points": [
+        "Login, pagamentos e painel administrativo",
+        "Prioridade no que valida a ideia",
+        "Base pronta para crescer depois do lançamento"
+      ]
+    }
+  },
+  "process": {
+    "title": "Como funciona",
+    "steps": [
+      {
+        "title": "Conversa",
+        "description": "Você conta o problema; a gente entende o que precisa existir e o que pode esperar."
+      },
+      {
+        "title": "Proposta",
+        "description": "Escopo, prazo e valor por escrito, antes de qualquer linha de código."
+      },
+      {
+        "title": "Entregas",
+        "description": "Versões frequentes que você testa no navegador ou no celular enquanto o projeto anda."
+      },
+      {
+        "title": "Lançamento",
+        "description": "Publicação, ajustes finos e suporte depois que o projeto está no ar."
+      }
+    ]
+  },
+  "products": {
+    "title": "Produtos da Linting",
+    "subtitle": "Ferramentas que a Linting criou e usa no dia a dia. São a prova de que a gente entende de IA na prática.",
+    "website": "Site",
+    "source": "Código no GitHub",
+    "agentbox": {
+      "tagline": "Máquinas isoladas para agentes de IA de programação, no seu próprio computador.",
+      "description": "Cada agente (Claude Code, Codex ou OpenCode) ganha uma máquina Linux só dele, com desktop, navegador e branch próprios. Um chat líder cria os agentes, passa as tarefas e avisa quando terminam.",
+      "points": [
+        "Vários agentes no mesmo projeto, sem conflito de portas, bancos ou arquivos",
+        "Desktop e navegador de cada agente, para assistir ou assumir o controle",
+        "Capturas de tela, gravações e relatórios de teste como prova do trabalho"
+      ],
+      "imageAlt": "O chat líder de um projeto no AgentBox, coordenando quatro agentes"
+    },
+    "hatch": {
+      "tagline": "Publique e compartilhe páginas com um link.",
+      "description": "Publique HTML pelo painel ou pelo terminal e compartilhe com um link privado, público ou com prazo para expirar. Com o servidor MCP, seus agentes de IA publicam também.",
+      "points": [
+        "Funciona com Claude Code, Codex, Gemini CLI, Cursor e VS Code",
+        "Cada publicação é uma nova versão; nada se perde",
+        "Links privados, públicos, permanentes ou temporários"
+      ],
+      "snippetCaption": "Adicione o Hatch ao Claude Code"
+    }
+  },
+  "founder": {
+    "title": "Quem está por trás",
+    "name": "Leandro Ciric",
+    "role": "Fundador e desenvolvedor full-stack",
+    "bio": "Desenvolvedor full-stack desde 2021, com passagem por Stefanini, 7waves e Consorciocred. Trabalha com React, Vue, React Native, Node.js e .NET, e criou o AgentBox e o Hatch para levar agentes de IA ao trabalho de verdade.",
+    "cta": "Ver currículo completo",
+    "photoAlt": "Foto de Leandro Ciric"
+  },
+  "contact": {
+    "title": "Vamos tirar seu projeto do papel?",
+    "subtitle": "Conte o que você precisa e a gente responde com os próximos passos.",
+    "whatsapp": "Chamar no WhatsApp",
+    "email": "Enviar e-mail",
+    "whatsappMessage": "Olá! Vim pelo site da Linting e gostaria de conversar sobre um projeto.",
+    "emailSubject": "Projeto com a Linting",
+    "elsewhere": "Ou encontre a gente em"
+  },
+  "about": {
+    "title": "Sobre o fundador",
+    "intro": "Olá, eu sou Leandro. Criei a Linting para fazer software do jeito que eu gosto de trabalhar: código limpo, escopo claro e conversa direta com o cliente.",
+    "origin": "\"lint\" era meu apelido antes de eu programar. Quando comecei a escrever código, a empresa virou \"linting\".",
+    "back": "Voltar para a Linting",
+    "hire": "Contratar a Linting"
+  },
+  "experience": {
+    "title": "Experiência",
+    "subtitle": "Trajetória profissional como desenvolvedor",
+    "present": "Atual",
+    "remote": "Remoto",
+    "remoteUs": "Remoto (EUA - Michigan)"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Alguns dos projetos mais relevantes",
+    "featured": "Destaque",
+    "live": "Ver online",
+    "source": "Código"
+  },
+  "skills": {
+    "title": "Tecnologias",
+    "subtitle": "Linguagens, frameworks e ferramentas do dia a dia",
+    "languages": "Linguagens",
+    "frameworks": "Frameworks e bibliotecas",
+    "tools": "Ferramentas e plataformas"
+  },
+  "github": {
+    "title": "Atividade no GitHub",
+    "subtitle": "O que tenho explorado e construído",
+    "activity": "Atividade",
+    "starred": "Favoritos",
+    "profile": "Ver perfil no GitHub",
+    "activityError": "Não foi possível carregar a atividade",
+    "activityEmpty": "Nenhuma atividade recente",
+    "starredError": "Não foi possível carregar os repositórios favoritos",
+    "starredEmpty": "Nenhum repositório favorito ainda"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "cnpj": "CNPJ"
+  }
+}

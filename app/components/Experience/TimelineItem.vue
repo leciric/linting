@@ -6,6 +6,15 @@ const props = defineProps<{
   isLast?: boolean
   index?: number
 }>()
+
+const { t, locale } = useI18n()
+
+const formatDate = (date: string) => {
+  if (date === 'present') return t('experience.present')
+  const [year, month] = date.split('-').map(Number)
+  return new Intl.DateTimeFormat(locale.value, { month: 'short', year: 'numeric', timeZone: 'UTC' })
+    .format(new Date(Date.UTC(year!, month! - 1)))
+}
 </script>
 
 <template>
@@ -27,7 +36,7 @@ const props = defineProps<{
           {{ job.title }}
         </h3>
         <span class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-          {{ job.startDate }} - {{ job.endDate }}
+          {{ formatDate(job.startDate) }} - {{ formatDate(job.endDate) }}
         </span>
       </div>
 
@@ -46,7 +55,7 @@ const props = defineProps<{
       <!-- Location -->
       <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mb-3 sm:mb-4 flex items-center gap-1">
         <Icon name="lucide:map-pin" class="w-3 h-3 sm:w-4 sm:h-4" />
-        {{ job.location }}
+        {{ t(`experience.${job.location}`) }}
       </p>
 
       <!-- Technologies -->

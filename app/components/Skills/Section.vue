@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { skills } from '~/data/portfolio'
 
+const { t } = useI18n()
+
 const languages = computed(() => skills.filter(s => s.category === 'language'))
 const frameworks = computed(() => skills.filter(s => s.category === 'framework'))
 const tools = computed(() => skills.filter(s => s.category === 'tool'))
@@ -9,8 +11,8 @@ const tools = computed(() => skills.filter(s => s.category === 'tool'))
 <template>
   <section id="skills" class="section-container">
     <UISectionTitle
-      title="Skills"
-      subtitle="Technologies and tools I work with"
+      :title="t('skills.title')"
+      :subtitle="t('skills.subtitle')"
     />
 
     <div class="space-y-6 sm:space-y-10 max-w-3xl mx-auto">
@@ -18,7 +20,7 @@ const tools = computed(() => skills.filter(s => s.category === 'tool'))
       <div>
         <h3 class="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3 sm:mb-4 flex items-center gap-2">
           <Icon name="lucide:code-2" class="w-4 h-4 sm:w-5 sm:h-5 text-primary-600 dark:text-primary-400" />
-          Languages
+          {{ t('skills.languages') }}
         </h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
           <SkillsBadge v-for="(skill, index) in languages" :key="skill.name" :skill="skill" :index="index" />
@@ -29,7 +31,7 @@ const tools = computed(() => skills.filter(s => s.category === 'tool'))
       <div>
         <h3 class="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3 sm:mb-4 flex items-center gap-2">
           <Icon name="lucide:layers" class="w-4 h-4 sm:w-5 sm:h-5 text-primary-600 dark:text-primary-400" />
-          Frameworks & Libraries
+          {{ t('skills.frameworks') }}
         </h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
           <SkillsBadge v-for="(skill, index) in frameworks" :key="skill.name" :skill="skill" :index="index" />
@@ -40,7 +42,7 @@ const tools = computed(() => skills.filter(s => s.category === 'tool'))
       <div>
         <h3 class="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3 sm:mb-4 flex items-center gap-2">
           <Icon name="lucide:wrench" class="w-4 h-4 sm:w-5 sm:h-5 text-primary-600 dark:text-primary-400" />
-          Tools & Platforms
+          {{ t('skills.tools') }}
         </h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
           <SkillsBadge v-for="(skill, index) in tools" :key="skill.name" :skill="skill" :index="index" />

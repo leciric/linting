@@ -1,24 +1,21 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'GitHub Activity | Leandro Ciric',
-  description: 'My GitHub activity and starred repositories.',
-  ogTitle: 'GitHub Activity | Leandro Ciric',
-  ogDescription: 'My GitHub activity and starred repositories.',
-})
+usePageSeo('meta.githubTitle', 'meta.githubDescription')
+
+const { t } = useI18n()
 
 const activeTab = ref<'activity' | 'starred'>('activity')
 
-const tabs = [
-  { id: 'activity' as const, label: 'Activity', icon: 'lucide:activity' },
-  { id: 'starred' as const, label: 'Starred', icon: 'lucide:star' },
-]
+const tabs = computed(() => [
+  { id: 'activity' as const, label: t('github.activity'), icon: 'lucide:activity' },
+  { id: 'starred' as const, label: t('github.starred'), icon: 'lucide:star' },
+])
 </script>
 
 <template>
   <div class="section-container">
     <UISectionTitle
-      title="GitHub Activity"
-      subtitle="What I've been exploring and building"
+      :title="t('github.title')"
+      :subtitle="t('github.subtitle')"
     />
 
     <!-- Tabs -->
@@ -49,7 +46,7 @@ const tabs = [
     <div class="mt-8 sm:mt-12 text-center">
       <UIButton href="https://github.com/leciric" variant="outline" size="md" external class="w-full sm:w-auto justify-center">
         <Icon name="lucide:github" class="w-5 h-5" />
-        View Profile on GitHub
+        {{ t('github.profile') }}
       </UIButton>
     </div>
   </div>

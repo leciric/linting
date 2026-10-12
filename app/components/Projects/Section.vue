@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { projects } from '~/data/portfolio'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <section id="projects" class="section-container bg-zinc-100/50 dark:bg-zinc-900/50">
     <UISectionTitle
-      title="Projects"
-      subtitle="Here are some of my most relevant projects"
+      :title="t('projects.title')"
+      :subtitle="t('projects.subtitle')"
     />
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">

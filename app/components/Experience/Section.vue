@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { jobs } from '~/data/portfolio'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <section id="experience" class="section-container">
     <UISectionTitle
-      title="Experience"
-      subtitle="My professional journey as a developer"
+      :title="t('experience.title')"
+      :subtitle="t('experience.subtitle')"
     />
 
     <div class="max-w-2xl mx-auto">
