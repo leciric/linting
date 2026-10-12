@@ -35,7 +35,6 @@ The site is in Brazilian Portuguese at `/` and English at `/en`, with [@nuxtjs/i
 - **Responsive Design** - Looks great on all devices, from mobile to desktop
 - **Dark/Light Mode** - Automatic theme detection with manual toggle
 - **Smooth Animations** - Powered by @vueuse/motion for elegant transitions
-- **GitHub Integration** - Live activity feed and starred repositories via GitHub API
 - **SEO Optimized** - Meta tags, Open Graph, Twitter cards, and JSON-LD schema
 - **Sitemap Generation** - Automatic sitemap for search engines
 - **Fast Performance** - Server-side rendering with Nuxt for optimal loading
@@ -50,7 +49,6 @@ linting/
 │   │   ├── App/          # Header, Footer, Logo
 │   │   ├── Contact/      # Contact section
 │   │   ├── Founder/      # About the founder
-│   │   ├── GitHub/       # GitHub activity & starred repos
 │   │   ├── Hero/         # Hero section and its lint editor
 │   │   ├── Process/      # How it works
 │   │   ├── Products/     # AgentBox and Hatch
@@ -59,9 +57,6 @@ linting/
 │   ├── data/             # Company data (contact, products)
 │   ├── layouts/          # Page layouts
 │   └── pages/            # Route pages
-├── server/
-│   └── api/              # Server API routes
-│       └── github/       # GitHub API endpoints
 ├── i18n/locales/         # pt-BR and en texts
 ├── nuxt.config.ts        # Nuxt configuration
 └── tailwind.config.ts    # Tailwind CSS configuration
@@ -89,23 +84,13 @@ linting/
    npm install
    ```
 
-3. **Set up environment variables** (optional, for GitHub API)
-
-   Create a `.env` file in the root directory:
-
-   ```env
-   NUXT_GITHUB_TOKEN=your_github_personal_access_token
-   ```
-
-   > **Note:** The GitHub token is optional but recommended. Without it, the GitHub API is limited to 60 requests/hour. With a token, you get 5,000 requests/hour.
-
-4. **Start the development server**
+3. **Start the development server**
 
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
 

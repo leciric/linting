@@ -92,14 +92,6 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
   },
 
-  // Runtime config for GitHub API
-  runtimeConfig: {
-    githubToken: '', // Server-only: set via NUXT_GITHUB_TOKEN env var
-    public: {
-      githubUsername: 'leciric',
-    },
-  },
-
   // TypeScript
   typescript: {
     strict: true,
